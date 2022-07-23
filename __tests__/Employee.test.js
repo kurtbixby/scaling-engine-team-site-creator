@@ -56,11 +56,12 @@ describe('Employee', () => {
     describe('createHtmlCard', () => {
         it('should fill in the template fields', async () => {
             const sam = new Employee('Sam', 4, 'sam@job.com');
-            fs.readFile = jest.fn().mockResolvedValue('Name:${values.name} Role:${values.role} Id:${values.id} Email:${values.email}');
+            const mock = jest.spyOn(Employee, '_generateHtml');
 
+            fs.readFile = jest.fn().mockResolvedValue('Name:${values.name} Role:${values.role} Id:${values.id} Email:${values.email}');
             const filledTemplate = await sam.createHtmlCard();
 
-            expect(filledTemplate).toEqual('Name:Sam Role:Employee Id:4 Email:sam@job.com')
+            expect(mock).toBeCalledWith('../src/employeeTemplate.html', { name: 'Sam', role:'Employee', id:4, email:'sam@job.com'});
         });
     })
 });
