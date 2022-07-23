@@ -1,14 +1,14 @@
 <div class="card">
     <div class="card-header">
-        <h2>${name}</h2>
-        <h3>${role}</h3>
+        <h2>${values.name}</h2>
+        <h3>${values.role}</h3>
     </div>
     <div class="card-body">
         <div class="card"> <!-- </div> style="width: 18rem;"> -->
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">ID: ${id}</li>
-              <li class="list-group-item">Email: <a href="mailto:${email}">${email}</a></li>
-              <li class="list-group-item">School: ${school}</li>
+              <li class="list-group-item">ID: ${values.id}</li>
+              <li class="list-group-item">Email: <a href="mailto:${values.email}">${values.email}</a></li>
+              <li class="list-group-item">School: ${values.school}</li>
             </ul>
           </div>
     </div>
