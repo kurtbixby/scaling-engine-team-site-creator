@@ -12,20 +12,20 @@ describe('Manager', () => {
         });
 
         it('should construct successfully', () => {
-            const [ name, id, email, office ] = [ 'Sam', 4, 'sam@job.com', 2 ];
-            const employee = new Manager(name, id, email, office);
+            const [ name, id, email, officeNumber ] = [ 'Sam', 4, 'sam@job.com', 2 ];
+            const employee = new Manager({name, id, email, officeNumber});
 
             expect(employee.name).toEqual(name);
             expect(employee.id).toEqual(id);
             expect(employee.email).toEqual(email);
-            expect(employee.officeNumber).toEqual(office);
+            expect(employee.officeNumber).toEqual(officeNumber);
             expect(employee.role).toEqual('Manager');
         })
     });
 
     describe('getters', () => {
-        const [ name, id, email, office ] = [ 'Sam', 4, 'sam@job.com', 2 ];
-        const employee = new Manager(name, id, email, office);
+        const [ name, id, email, officeNumber ] = [ 'Sam', 4, 'sam@job.com', 2 ];
+        const employee = new Manager({name, id, email, officeNumber});
 
         it('getName()', () => {
             expect(employee.getName()).toEqual(name);
@@ -46,13 +46,13 @@ describe('Manager', () => {
 
     describe('createHtmlCard', () => {
         it('should fill in the template fields', async () => {
-            const sam = new Manager('Sam', 4, 'sam@job.com', 2);
+            const sam = new Manager({name: 'Sam', id: 4, email: 'sam@job.com', officeNumber: 2});
             const mock = jest.spyOn(Employee, '_generateHtml');
 
             fs.readFile = jest.fn().mockResolvedValue('Name:${values.name} Role:${values.role} Id:${values.id} Email:${values.email}');
             const filledTemplate = await sam.createHtmlCard();
 
-            expect(mock).toBeCalledWith('../src/managerTemplate.html', { name: 'Sam', role:'Manager', id:4, email:'sam@job.com', office:2});
+            expect(mock).toBeCalledWith('./src/managerTemplate.html', { name: 'Sam', role:'Manager', id:4, email:'sam@job.com', office:2});
         });
     })
 });
