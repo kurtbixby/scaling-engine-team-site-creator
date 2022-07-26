@@ -1,15 +1,18 @@
-<div class="card">
-    <div class="card-header">
-        <h2>${values.name}</h2>
-        <h3>${values.role}</h3>
+<div class="col-3 my-2">
+  <div class="card shadow-sm">
+    <div class="card-header bg-success text-white">
+      <h2>${values.name}</h2>
+      <h5><i class="fa-solid fa-mug-hot"></i>${values.role}</h5>
     </div>
     <div class="card-body">
-        <div class="card"> <!-- </div> style="width: 18rem;"> -->
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">ID: ${values.id}</li>
-              <li class="list-group-item">Email: <a href="mailto:${values.email}">${values.email}</a></li>
-              <li class="list-group-item">Office Number: ${values.office}</li>
-            </ul>
-          </div>
+      <div class="card">
+        <!-- </div> style="width: 18rem;"> -->
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">ID: ${values.id}</li>
+          <li class="list-group-item">Email: <a href="mailto:${values.email}">${values.email}</a></li>
+          <li class="list-group-item">Office Number: ${values.office}</li>
+        </ul>
+      </div>
     </div>
+  </div>
 </div>
