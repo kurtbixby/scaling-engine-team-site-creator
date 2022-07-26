@@ -12,7 +12,6 @@ A command line-based team site generator that creates an HTML page displaying th
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [Tests](#tests)
-- [Questions](#questions)
 - [License](#license)
 
 ## Installation
@@ -30,11 +29,6 @@ Although this application is no longer under active development, I welcome any a
 ## Tests
 
 Tests can be run by executing ```npm run test``` from the project's root directory. Tests are created with Jest.
-
-## Questions
-
-Check me out on __[GitHub](https://github.com/kurtbixby)__  
-Send me an email at __[kurtbixby@utexas.edu](mailto:kurtbixby@utexas.edu)__
 
 ## License
 
